@@ -4,6 +4,7 @@ import DTOs.Funcion.FuncionDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
@@ -14,5 +15,7 @@ public class SalaDTO {
     private long id;
     private String nombre;
     private int capacidad;
+
+    @JsonIgnoreProperties("sala")
     private List<FuncionDTO> funciones;
 }

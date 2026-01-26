@@ -1,4 +1,4 @@
-package DTOs.Rol;
+package DTOs.Director;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotBlank;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RolCreateDTO {
-    @NotBlank(message = "El nombre del rol es obligatorio")
+public class DirectorCreateDTO {
+    @NotBlank(message = "El nombre del director es obligatorio")
     private String nombre;
 }
