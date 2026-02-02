@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "usuarios")
@@ -23,4 +24,8 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario")
     private List<Venta> ventas;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
+    private java.util.Set<Rol> roles;
 }

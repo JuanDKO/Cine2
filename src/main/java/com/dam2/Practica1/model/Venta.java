@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -17,7 +17,7 @@ public class Venta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private LocalDate fecha;
+    private LocalDateTime fecha;
     @Column(name = "importe_total")
     private double importeTotal;
     @Column(name = "metodo_pago")

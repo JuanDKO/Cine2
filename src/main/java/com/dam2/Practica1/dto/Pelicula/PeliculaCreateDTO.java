@@ -10,8 +10,8 @@ import jakarta.validation.constraints.NotNull;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PeliculaCreateDTO {
-    @NotBlank(message = "El nombre de la película es obligatorio")
-    private String nombre;
+    @NotBlank(message = "El título de la película es obligatorio")
+    private String titulo;
     @NotNull(message = "La duración es obligatoria")
     private int duracion;
     private int edadMinima;

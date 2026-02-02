@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -18,7 +18,7 @@ public class Funcion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "fecha_hora")
-    private LocalDate fechaHora;
+    private LocalDateTime fechaHora;
 
     private double precio;
 

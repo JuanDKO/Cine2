@@ -1,9 +1,8 @@
 package com.dam2.Practica1.dto.Entrada;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.dam2.Practica1.model.EstadoEntrada;
 import jakarta.validation.constraints.NotNull;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
@@ -14,7 +13,7 @@ public class EntradaCreateDTO {
     private int fila;
     @NotNull(message = "El asiento es obligatorio")
     private int asiento;
-    private String estadoEntrada;
+    private EstadoEntrada estado;
     @NotNull(message = "El ID de la venta es obligatorio")
     private long ventaId;
     @NotNull(message = "El ID de la función es obligatorio")

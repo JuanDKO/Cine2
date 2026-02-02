@@ -4,14 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import jakarta.validation.constraints.NotNull;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class VentaCreateDTO {
     @NotNull(message = "La fecha es obligatoria")
-    private LocalDate fecha;
+    private LocalDateTime fecha;
     @NotNull(message = "El importe total es obligatorio")
     private double importeTotal;
     @NotNull(message = "El método de paho es obligatorio")

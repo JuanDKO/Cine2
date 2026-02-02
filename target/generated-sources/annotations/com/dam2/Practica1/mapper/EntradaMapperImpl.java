@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-01-28T12:06:42+0100",
+    date = "2026-02-02T09:57:39+0100",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 24 (Oracle Corporation)"
 )
 @Component
@@ -34,7 +34,7 @@ public class EntradaMapperImpl implements EntradaMapper {
         entradaDTO.setCodigo( entrada.getCodigo() );
         entradaDTO.setFila( entrada.getFila() );
         entradaDTO.setAsiento( entrada.getAsiento() );
-        entradaDTO.setEstadoEntrada( entrada.getEstadoEntrada() );
+        entradaDTO.setEstado( entrada.getEstado() );
         entradaDTO.setVenta( ventaMapper.toDTO( entrada.getVenta() ) );
         entradaDTO.setFuncion( funcionMapper.toDTO( entrada.getFuncion() ) );
 
@@ -52,7 +52,7 @@ public class EntradaMapperImpl implements EntradaMapper {
         entrada.setCodigo( entradaCreateDTO.getCodigo() );
         entrada.setFila( entradaCreateDTO.getFila() );
         entrada.setAsiento( entradaCreateDTO.getAsiento() );
-        entrada.setEstadoEntrada( entradaCreateDTO.getEstadoEntrada() );
+        entrada.setEstado( entradaCreateDTO.getEstado() );
 
         return entrada;
     }
@@ -66,7 +66,7 @@ public class EntradaMapperImpl implements EntradaMapper {
         entrada.setCodigo( entradaCreateDTO.getCodigo() );
         entrada.setFila( entradaCreateDTO.getFila() );
         entrada.setAsiento( entradaCreateDTO.getAsiento() );
-        entrada.setEstadoEntrada( entradaCreateDTO.getEstadoEntrada() );
+        entrada.setEstado( entradaCreateDTO.getEstado() );
     }
 
     @Override

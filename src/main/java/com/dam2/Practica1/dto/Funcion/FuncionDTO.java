@@ -7,14 +7,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class FuncionDTO {
     private long id;
-    private LocalDate fechaHora;
+    private LocalDateTime fechaHora;
     private double precio;
     private PeliculaDTO pelicula;
 

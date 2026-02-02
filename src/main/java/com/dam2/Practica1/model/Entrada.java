@@ -17,8 +17,8 @@ public class Entrada {
     private String codigo;
     private int fila;
     private int asiento;
-    @Column(name = "estado_entrada")
-    private String estadoEntrada;
+    @Enumerated(EnumType.STRING)
+    private EstadoEntrada estado;
 
     @ManyToOne
     @JoinColumn(name = "ventaId", nullable = false)

@@ -5,14 +5,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class VentaDTO {
     private long id;
-    private LocalDate fecha;
+    private LocalDateTime fecha;
     private double importeTotal;
     private String metodoPago;
     private String estado;

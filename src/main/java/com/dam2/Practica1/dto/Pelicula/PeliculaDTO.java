@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PeliculaDTO {
     private long id;
-    private String nombre;
+    private String titulo;
     private int duracion;
     private int edadMinima;
     private DirectorDTO director;

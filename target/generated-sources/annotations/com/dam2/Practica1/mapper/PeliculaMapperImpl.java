@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-01-28T12:06:42+0100",
+    date = "2026-02-02T09:57:39+0100",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 24 (Oracle Corporation)"
 )
 @Component
@@ -29,7 +29,7 @@ public class PeliculaMapperImpl implements PeliculaMapper {
         PeliculaDTO peliculaDTO = new PeliculaDTO();
 
         peliculaDTO.setId( pelicula.getId() );
-        peliculaDTO.setNombre( pelicula.getNombre() );
+        peliculaDTO.setTitulo( pelicula.getTitulo() );
         peliculaDTO.setDuracion( pelicula.getDuracion() );
         peliculaDTO.setEdadMinima( pelicula.getEdadMinima() );
         peliculaDTO.setDirector( directorMapper.toDTO( pelicula.getDirector() ) );
@@ -45,7 +45,7 @@ public class PeliculaMapperImpl implements PeliculaMapper {
 
         Pelicula pelicula = new Pelicula();
 
-        pelicula.setNombre( peliculaCreateDTO.getNombre() );
+        pelicula.setTitulo( peliculaCreateDTO.getTitulo() );
         pelicula.setDuracion( peliculaCreateDTO.getDuracion() );
         pelicula.setEdadMinima( peliculaCreateDTO.getEdadMinima() );
 
@@ -58,7 +58,7 @@ public class PeliculaMapperImpl implements PeliculaMapper {
             return;
         }
 
-        pelicula.setNombre( peliculaCreateDTO.getNombre() );
+        pelicula.setTitulo( peliculaCreateDTO.getTitulo() );
         pelicula.setDuracion( peliculaCreateDTO.getDuracion() );
         pelicula.setEdadMinima( peliculaCreateDTO.getEdadMinima() );
     }

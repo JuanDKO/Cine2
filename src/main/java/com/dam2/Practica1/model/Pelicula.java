@@ -18,7 +18,7 @@ public class Pelicula {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String nombre;
+    private String titulo;
     private int duracion;
 
     @Column(name = "edad_minima")
