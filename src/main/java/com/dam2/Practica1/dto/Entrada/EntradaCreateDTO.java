@@ -1,6 +1,6 @@
 package com.dam2.Practica1.dto.Entrada;
 
-import com.dam2.Practica1.model.EstadoEntrada;
+import com.dam2.Practica1.model.Entrada.EstadoEntrada;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 

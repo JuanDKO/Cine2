@@ -27,4 +27,10 @@ public class Entrada {
     @ManyToOne
     @JoinColumn(name = "funcionId", nullable = false)
     private Funcion funcion;
+
+    public enum EstadoEntrada {
+        ACTIVA,
+        USADA,
+        CANCELADA
+    }
 }

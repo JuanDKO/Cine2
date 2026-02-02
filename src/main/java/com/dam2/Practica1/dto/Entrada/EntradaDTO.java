@@ -2,7 +2,7 @@ package com.dam2.Practica1.dto.Entrada;
 
 import com.dam2.Practica1.dto.Funcion.FuncionDTO;
 import com.dam2.Practica1.dto.Venta.VentaDTO;
-import com.dam2.Practica1.model.EstadoEntrada;
+import com.dam2.Practica1.model.Entrada.EstadoEntrada;
 import com.dam2.Practica1.model.Venta;
 import lombok.AllArgsConstructor;
 import lombok.Data;

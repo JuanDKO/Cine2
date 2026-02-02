@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/actores")
-@CrossOrigin(origins = "*") // Permite peticiones desde cualquier origen, ajústalo según necesites
+
 public class ActorController {
 
     @Autowired
