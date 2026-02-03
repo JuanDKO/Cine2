@@ -69,4 +69,12 @@ public class EntradaService {
         }
         return false;
     }
+
+    public List<EntradaDTO> getEntradasByFuncion(Long funcionId) {
+        return entradaMapper.toDTO(entradaRepository.findByFuncionId(funcionId));
+    }
+
+    public List<EntradaDTO> getEntradasByUsuario(Long usuarioId) {
+        return entradaMapper.toDTO(entradaRepository.findByVentaUsuarioId(usuarioId));
+    }
 }

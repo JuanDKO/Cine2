@@ -35,10 +35,23 @@ public class VentaService {
     public VentaDTO createVenta(VentaCreateDTO ventaCreateDTO) {
         Venta venta = ventaMapper.fromCreateUpdateDTO(ventaCreateDTO);
 
-        usuarioRepository.findById(ventaCreateDTO.getUsuarioId())
-                .ifPresent(venta::setUsuario);
+        System.out.println("DEBUG: Creating Venta for Usuario ID: " + ventaCreateDTO.getUsuarioId());
 
-        return ventaMapper.toDTO(ventaRepository.save(venta));
+        usuarioRepository.findById(ventaCreateDTO.getUsuarioId())
+                .ifPresentOrElse(
+                        u -> {
+                            System.out.println("DEBUG: Usuario found: " + u.getEmail());
+                            venta.setUsuario(u);
+                        },
+                        () -> System.out.println("DEBUG: Usuario NOT found for ID: " + ventaCreateDTO.getUsuarioId()));
+
+        if (venta.getUsuario() == null) {
+            throw new RuntimeException("Usuario no encontrado con ID: " + ventaCreateDTO.getUsuarioId());
+        }
+
+        Venta savedVenta = ventaRepository.save(venta);
+
+        return ventaMapper.toDTO(savedVenta);
     }
 
     public Optional<VentaDTO> updateVenta(Long id, VentaCreateDTO ventaCreateDTO) {

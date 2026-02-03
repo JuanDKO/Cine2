@@ -3,6 +3,8 @@ package com.dam2.Practica1.loader;
 import com.dam2.Practica1.model.Actor;
 import com.dam2.Practica1.model.Director;
 import com.dam2.Practica1.model.Pelicula;
+import com.dam2.Practica1.model.Rol;
+import com.dam2.Practica1.repository.RolRepository;
 import com.dam2.Practica1.repository.ActorRepository;
 import com.dam2.Practica1.repository.DirectorRepository;
 import com.dam2.Practica1.repository.PeliculaRepository;
@@ -24,8 +26,37 @@ public class DataLoader implements CommandLineRunner {
         @Autowired
         private PeliculaRepository peliculaRepository;
 
+        @Autowired
+        private RolRepository rolRepository;
+
+        @Autowired
+        private com.dam2.Practica1.repository.SalaRepository salaRepository;
+
         @Override
         public void run(String... args) throws Exception {
+                // Initialize Roles
+                if (rolRepository.findByNombre("usuario").isEmpty()) {
+                        Rol rolUsuario = new Rol();
+                        rolUsuario.setNombre("usuario");
+                        rolRepository.save(rolUsuario);
+                }
+
+                if (rolRepository.findByNombre("admin").isEmpty()) {
+                        Rol rolAdmin = new Rol();
+                        rolAdmin.setNombre("admin");
+                        rolRepository.save(rolAdmin);
+                }
+
+                // Initialize Salas (6 rooms)
+                if (salaRepository.count() == 0) {
+                        for (int i = 1; i <= 6; i++) {
+                                com.dam2.Practica1.model.Sala s = new com.dam2.Practica1.model.Sala();
+                                s.setNombre("Sala " + i);
+                                s.setCapacidad(100); // Default capacity
+                                salaRepository.save(s);
+                        }
+                }
+
                 // Simple check to prevent duplicate data insertion on restart
                 if (peliculaRepository.count() > 0) {
                         return;

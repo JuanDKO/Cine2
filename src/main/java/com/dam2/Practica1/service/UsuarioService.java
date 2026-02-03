@@ -18,6 +18,9 @@ public class UsuarioService {
     private UsuarioRepository usuarioRepository;
 
     @Autowired
+    private com.dam2.Practica1.repository.RolRepository rolRepository;
+
+    @Autowired
     private UsuarioMapper usuarioMapper;
 
     public List<UsuarioDTO> getAllUsuarios() {
@@ -30,6 +33,16 @@ public class UsuarioService {
 
     public UsuarioDTO createUsuario(UsuarioCreateDTO usuarioCreateDTO) {
         Usuario usuario = usuarioMapper.fromCreateUpdateDTO(usuarioCreateDTO);
+
+        // Asignar rol "usuario" por defecto
+        com.dam2.Practica1.model.Rol rolUsuario = rolRepository.findByNombre("usuario")
+                .orElseThrow(() -> new RuntimeException("Error: Rol 'usuario' no encontrado."));
+
+        if (usuario.getRoles() == null) {
+            usuario.setRoles(new java.util.HashSet<>());
+        }
+        usuario.getRoles().add(rolUsuario);
+
         return usuarioMapper.toDTO(usuarioRepository.save(usuario));
     }
 

@@ -16,7 +16,6 @@ public class VentaCreateDTO {
     private double importeTotal;
     @NotNull(message = "El método de paho es obligatorio")
     private String metodoPago;
-    private String estado;
     @NotNull(message = "El ID del usuario es obligatorio")
     private long usuarioId;
 }

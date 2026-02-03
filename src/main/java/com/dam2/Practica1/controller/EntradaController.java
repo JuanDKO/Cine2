@@ -50,4 +50,17 @@ public class EntradaController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @GetMapping("/funcion/{funcionId}")
+    public ResponseEntity<List<EntradaDTO>> getEntradasByFuncion(@PathVariable Long funcionId) {
+        return ResponseEntity.ok(entradaService.getEntradasByFuncion(funcionId));
+    }
+
+    @GetMapping("/usuario/{usuarioId}")
+    public ResponseEntity<List<EntradaDTO>> getEntradasByUsuario(@PathVariable Long usuarioId) {
+        System.out.println("DEBUG: Fetching entries for Usuario ID: " + usuarioId);
+        List<EntradaDTO> result = entradaService.getEntradasByUsuario(usuarioId);
+        System.out.println("DEBUG: Found " + result.size() + " entries.");
+        return ResponseEntity.ok(result);
+    }
 }
